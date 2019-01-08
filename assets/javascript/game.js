@@ -16,29 +16,29 @@ function startGame () {
 function resetCharacters () {
   // resets the character stats to originals.
   return {
-    'MasterYoda': {
+    'Master-Yoda': {
       name: 'Yoda',
       health: 120,
       attack: 8,
-      imagesUrl: 'assets/images/yoda./png',
+      imageUrl:'http://assets/images/yoda.png',
       enemyAttackBack: 15
     },
     'lukeSkywalker': {
-      name: 'Luke Skywalker',
+      name: 'Luke-Skywalker',
       health: 100,
       attack: 14,
       imageUrl: 'assets/images/luke.png',
       enemyAttackBack: 5
     },
     'darthVader': {
-      name: 'Darth Vader',
+      name: 'Darth-Vader',
       health: 150,
       attack: 8,
       imageUrl: 'assets/images/vader.png',
       enemyAttackBack: 20
     },
     'ImperialTrooper': {
-      name: 'Trooper',
+      name: 'Para-Trooper',
       health: 180,
       attack: 7,
       imageUrl: 'assets/images/trooper.png',
@@ -103,7 +103,7 @@ function renderOpponents (selectedCharacterKey) {
   }
 }
 
-/* BUSINESS LOGIC */
+
 
 /*
   HOMEWORK INSTRUCTIONS: The player chooses an opponent by clicking on an enemy's picture.
@@ -138,11 +138,6 @@ function defend () {
   // HOMEWORK INSTRUCTIONS: the selectedCharacter will lose HP
   gameState.selectedCharacter.health -= gameState.selectedDefender.enemyAttackBack
 }
-
-// Design Note: I like naming functions that return a boolean after the question
-// that they answer... like "isCharacterDead" instead of "CharacterDead". That way
-// it feels more like the boolean returned is answering a question for me!
-// ^make sure if you do this, that your boolean returns true / false in the correct situations
 
 // returns boolean if the passed character is dead
 function isCharacterDead (character) {
