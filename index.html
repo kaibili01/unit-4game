@@ -7,7 +7,6 @@
     <title>Star Wars JQuery Game!</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900" rel="stylesheet">
-
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- jQuery -->
@@ -18,35 +17,35 @@
 
   <body>
 
-    <div class="main-section-title">Star Wars RPG!</div>
+    <div class="main-section-title"><h3>Star Wars RPG!</h3></div>
     <div id="main-game-section">
-      <!-- Where the characters are initially available to be selected. -->
-      <div id="characters-section">
-        <div class="section-title">Select Your Character</div>
+      <!-- Initial character selection area. -->
+      <div id="characters-section" class="characters-section">
+        
         <div id="character-area"></div>
+        <div class="section-title" ><h2>Select Your Character</h2></div>
       </div>
 
-      <!-- Section for our selected character. -->
-      <div id="selected-character-section">
-        <div class="section-title">Your Character</div>
+
+      
+      <!-- Character Space. -->
+      <div id="selected-character-section"><div class="selected-character"><h4>Your Character</h4></div>
         <!-- Where our selected character will appear. -->
         <div id="selected-character"></div>
       </div>
 
-      <!-- Where our enemies available to attack will appear. -->
+      <!-- Enemy character space. -->
       <div id="available-to-attack-section">
-        <div class="section-title">Enemies Available To Attack</div>
+        <div class="available-to-attack-section"><h4>Enemies Available To Attack</h4></div>
       </div>
 
-      <div class="section-title">Fight Section</div>
+      <div class="fight-section"><h4>Fight Section</h4></div>
       <div id="fight-section">
-        <button id="attack-button" style="display: none;">Attack</button>
+       <button id="attack-button" style="display: none;">Attack</button>
       </div>
 
-      <div id="action">
-        <div class="character-section">
-          <div class="section-title">Defender</div>
-          <!-- Where our defender will appear. -->
+      <div id="action"><div class="defender"><h4>Defender</h4></div>
+          <!-- Defender Space. -->
           <div id="defender"></div>
         </div>
       </div>

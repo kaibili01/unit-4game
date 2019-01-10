@@ -2,10 +2,10 @@ var characters, gameState
 
 /* RESET FUNCTIONS */
 
-// startGame acts as primary reset function.
+// startGame reset function to begin with.
 // it is called at the bottom of the file to start the game.
 function startGame () {
-  resets the game to original state;
+  // resets the game to original state;
   characters = resetCharacters()
   gameState = resetGameState()
 
@@ -14,35 +14,36 @@ function startGame () {
 }
 
 function resetCharacters () {
-  // resets the character stats to originals.
+  // resets the character stats to originals. This function holds all of the characters 
+      // specific features.
   return {
-    'Master-Yoda': {
+    'masterYoda': {
       name: 'Yoda',
-      health: 120,
+      health: 200,
       attack: 8,
-      imageUrl:'http://assets/images/yoda.png',
+      imageUrl: 'assets/images/yoda.png',
       enemyAttackBack: 15
     },
     'lukeSkywalker': {
-      name: 'Luke-Skywalker',
-      health: 100,
-      attack: 14,
+      name: 'Luke Skywalker',
+      health: 150,
+      attack: 12,
       imageUrl: 'assets/images/luke.png',
-      enemyAttackBack: 5
+      enemyAttackBack: 10
     },
     'darthVader': {
-      name: 'Darth-Vader',
-      health: 150,
-      attack: 8,
-      imageUrl: 'assets/images/vader.png',
-      enemyAttackBack: 20
-    },
-    'ImperialTrooper': {
-      name: 'Para-Trooper',
+      name: 'Darth Vader',
       health: 180,
+      attack: 15,
+      imageUrl: 'assets/images/vader.png',
+      enemyAttackBack: 10
+    },
+    'imperial-Trooper': {
+      name: 'Trooper',
+      health: 100,
       attack: 7,
       imageUrl: 'assets/images/trooper.png',
-      enemyAttackBack: 25
+      enemyAttackBack: 8
     }
   }
 }
@@ -106,7 +107,7 @@ function renderOpponents (selectedCharacterKey) {
 
 
 /*
-  HOMEWORK INSTRUCTIONS: The player chooses an opponent by clicking on an enemy's picture.
+The player chooses an enemy by clicking their picture.
 */
 function enableEnemySelection () {
   $('.enemy').on('click.enemySelect', function () {
@@ -117,9 +118,9 @@ function enableEnemySelection () {
     // move enemy
     $('#defender').append(this)
     /*
-    * HOMEWORK INSTRUCTIONS: Once the player selects an opponent,
-      that enemy is moved to a `defender area`.
-       The player will now be able to click the `attack` button
+    *Once opponent is choosen,
+      that enemy goes to `defender area`.
+       The player can use the `attack` button against their adversary. 
     */
     $('#attack-button').show()
     $('.enemy').off('click.enemySelect')
@@ -132,10 +133,10 @@ function attack (numAttacks) {
   gameState.selectedDefender.health -= gameState.selectedCharacter.attack * numAttacks
 }
 
-//  HOMEWORK INSTRUCTIONS: The opponent character will instantly counter the attack.
+// The enemy character will immediatly fight back.
 function defend () {
   console.log('defender countering')
-  // HOMEWORK INSTRUCTIONS: the selectedCharacter will lose HP
+  // the selectedCharacter will lose HP
   gameState.selectedCharacter.health -= gameState.selectedDefender.enemyAttackBack
 }
 
@@ -151,7 +152,7 @@ function isGameWon () {
   return gameState.enemiesLeft === 0
 }
 
-// this function returns a boolean, indicating that the attack phase has been completed
+// returns a boolean, the attack is finished.
 function isAttackPhaseComplete () {
   // logic to check if defender or players are dead.
   if (isCharacterDead(gameState.selectedCharacter)) {
@@ -165,17 +166,17 @@ function isAttackPhaseComplete () {
   } else if (isCharacterDead(gameState.selectedDefender)) {
     console.log('defender dead')
 
-    // decrement enemiesLeft counter and empty defender div
+    // reduce the  enemiesLeft counter and reset defender div
     gameState.enemiesLeft--
     $('#defender').empty()
 
-    // checks if you win the game, or if there are more characters to fight
+    // checks if you won, and who else remains to fight.
     if (isGameWon()) {
       // show reset button and alert
       alert('You win! Click Reset to play again')
       $('#reset-button').show()
     } else {
-      // Prompt user to select another enemy
+      // Choose another opponent
       alert('You defeated ' + gameState.selectedDefender.name + '! Select another enemy to fight.')
       enableEnemySelection()
     }

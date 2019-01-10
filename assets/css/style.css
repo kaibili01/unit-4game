@@ -1,11 +1,16 @@
 body {
-    font-family: 'Orbitron', sans-serif;
-    color: white;
-	background-image: url("https://www.jooomshaper.com/data/out/8/IMG_208215.jpg");
+	font-family: 'Orbitron', sans-serif;
+    color:white;
+	background-image: url("https://images.alphacoders.com/572/572945.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
     background-attachment: fixed;
-    background-color: #0e0e0e;
+	background-color: #0e0e0e;	 
+}
+
+h1,h2,h3,h4,h5,h6 { 
+	background: rgba(0, 0, 0, 0.5); /* Black color with 50% alpha/opacity */ 
+	
 }
 
 img {
@@ -20,14 +25,52 @@ img {
 	text-align: center;
 }
 
+
+
+
 .character {
-	display: inline-block;
+	display:inline-block;
 	border-style: solid;
-	border-color: green;
+	border-color:whitesmoke;
 	border-width: 3px;
 	cursor: pointer;
-	background-color: white;
+	background-color: black;
+	
+	
 }
+
+/* Its bette to style to classes:  */
+
+
+
+.main-game-section {
+	text-align: center;
+}
+
+.characters-section {
+	text-align: center;
+}
+
+.section-title	{
+	text-align: center;
+}
+
+.selected-character	{
+	text-align: left;
+}
+.available-to-attack-section {
+	text-align: left;
+} 
+
+.fight-section{
+	text-align: left;
+}
+ .defender{
+	 text-align: left;
+ }
+
+
+
 .character-image {
 	padding-right: 16px;
 	padding-left: 16px;
@@ -41,9 +84,9 @@ img {
 	display: inline-block;
 	border-style: solid;
 	border-color: black;
-	border-width: 1px;
+	border-width: 3px;
 	cursor: pointer;
-	background-color: red;
+	background-color: #ff9900;
 }
 .target-enemy {
 	background-color: black;
@@ -67,7 +110,7 @@ img {
 #defender-name { text-align: center; }
 #defender-health { text-align: center; }
 
-#choose-enemy-button { visibility: hidden; }
+#choose-enemy-button { visibility: hidden;}
 
 #restart-button { visibility: hidden; }
 
