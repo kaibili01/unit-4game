@@ -203,7 +203,7 @@ $(document).ready(function () {
   /* CLICK HANDLERS */
 
   /*
-  * HOMEWORK INSTRUCTIONS: When the game starts, the player will choose a character
+  When the game starts, the player will choose a character
    by clicking on the fighter's picture.
    The player will fight as that character for the rest of the game.
   */
@@ -225,7 +225,7 @@ $(document).ready(function () {
     $('#selected-character').append(this)
 
     /*
-      HOMEWORK INSTRUCTIONS: Enemies should be moved to a different area of the screen.
+    Enemies should be moved to a different area of the screen.
     */
     renderOpponents(selectedKey)
 
